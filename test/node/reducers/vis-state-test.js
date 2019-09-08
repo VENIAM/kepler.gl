@@ -27,7 +27,6 @@ import reducer from 'reducers/vis-state';
 
 import {INITIAL_VIS_STATE} from 'reducers/vis-state-updaters';
 
-import {getLightSettingsFromBounds} from 'utils/layer-utils/layer-utils';
 import {filterData, getDefaultFilter} from 'utils/filter-utils';
 import {createNewDataEntry} from 'utils/dataset-utils';
 import {processCsvData, processGeojson} from 'processors/data-processor';
@@ -779,8 +778,7 @@ test('#visStateReducer -> UPDATE_VIS_DATA.2', t => {
   });
 
   expectedPointLayer1.meta = {
-    bounds: [35.2, 12.25, 37.75, 12.29],
-    lightSettings: getLightSettingsFromBounds([35.2, 12.25, 37.75, 12.29])
+    bounds: [35.2, 12.25, 37.75, 12.29]
   };
 
   const expectedPointLayer2 = new PointLayer({
@@ -794,8 +792,7 @@ test('#visStateReducer -> UPDATE_VIS_DATA.2', t => {
   });
 
   expectedPointLayer2.meta = {
-    bounds: [21.3, 33.1, 100.12, 46.21],
-    lightSettings: getLightSettingsFromBounds([21.3, 33.1, 100.12, 46.21])
+    bounds: [21.3, 33.1, 100.12, 46.21]
   };
 
   const expectedLayers = [
@@ -1025,7 +1022,6 @@ test('#visStateReducer -> UPDATE_VIS_DATA.4.Geojson', t => {
   expectedLayer.dataToFeature = dataToFeature;
   expectedLayer.meta = {
     bounds: geoBounds,
-    lightSettings: geoLghtSettings,
     fixedRadius: false,
     featureTypes: {
       polygon: true
@@ -1323,13 +1319,7 @@ test('#visStateReducer -> setFilter', t => {
   });
 
   expectedLayer1.meta = {
-    bounds: [31.2148748, 29.9870074, 31.2590542, 30.0614122],
-    lightSettings: getLightSettingsFromBounds([
-      31.2148748,
-      29.9870074,
-      31.2590542,
-      30.0614122
-    ])
+    bounds: [31.2148748, 29.9870074, 31.2590542, 30.0614122]
   };
 
   const expectedLayers = [expectedLayer1];

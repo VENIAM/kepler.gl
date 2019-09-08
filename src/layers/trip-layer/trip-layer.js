@@ -38,16 +38,18 @@ import TripInfoModalFactory from './trip-info-modal';
 
 export const tripVisConfigs = {
   opacity: 'opacity',
-  thickness: {
-    type: 'number',
-    defaultValue: 0.5,
-    label: 'Stroke Width',
-    isRanged: false,
-    range: [0, 100],
-    step: 0.1,
-    group: 'stroke',
-    property: 'thickness'
-  },
+  // thickness: {
+  //   type: 'number',
+  //   defaultValue: 0.5,
+  //   label: 'Stroke Width',
+  //   isRanged: false,
+  //   range: [0, 100],
+  //   step: 0.1,
+  //   group: 'stroke',
+  //   property: 'thickness'
+  // },
+  thickness: 'thickness',
+
   colorRange: 'colorRange',
   trailLength: 'trailLength',
 
@@ -112,7 +114,9 @@ export default class TripLayer extends Layer {
       }
     };
   }
+
   static findDefaultLayerProps({label, fields, data}, foundLayers) {
+
     const geojsonColumns = fields.filter(f => f.type === 'geojson').map(f => f.name);
 
     const defaultColumns = {
@@ -252,13 +256,11 @@ export default class TripLayer extends Layer {
 
     // get bounds from features
     const bounds = getGeojsonBounds(allFeatures);
-    // get lightSettings from points
-    const lightSettings = this.getLightSettingsFromBounds(bounds);
 
     // keep a record of what type of geometry the collection has
     const featureTypes = getGeojsonFeatureTypes(allFeatures);
 
-    this.updateMeta({bounds, lightSettings, featureTypes});
+    this.updateMeta({bounds, featureTypes});
   }
 
   setInitialLayerConfig(allData) {
@@ -267,17 +269,8 @@ export default class TripLayer extends Layer {
   }
 
   renderLayer({data, idx, mapState, animationConfig}) {
-    console.log(animationConfig.domain[0])
-    const {lightSettings} = this.meta;
-    const zoomFactor = this.getZoomFactor(mapState);
     const {visConfig} = this.config;
-
-    const layerProps = {
-      // multiplier applied just so it being consistent with previously saved maps
-      WidthScale: visConfig.thickness * zoomFactor * 8,
-      WidthMinPixels: 1,
-      MiterLimit: 4
-    };
+    const zoomFactor = this.getZoomFactor(mapState);
 
     const updateTriggers = {
       getColor: {
@@ -285,29 +278,37 @@ export default class TripLayer extends Layer {
         colorField: this.config.colorField,
         colorRange: visConfig.colorRange,
         colorScale: this.config.colorScale
+      },
+      getWidth: {
+        sizeField: this.config.sizeField,
+        sizeRange: visConfig.sizeRange
+      },
+      getTimestamps: {
+        columns: this.config.columns,
+        domain0: animationConfig.domain[0]
       }
-      // getWidth: {
-      //   sizeField: this.config.sizeField,
-      //   sizeRange: visConfig.sizeRange
-      // }
     };
 
     return [
       new DeckGLTripsLayer({
-        ...layerProps,
         id: this.id,
         idx,
         data: data.data,
         getPath: data.getPath,
-        getTimestamps: d => data.getTimestamps(d).map(ts => ts - animationConfig.domain[0]) ,
         getColor: data.getColor,
-        // opacity: 0.3,
-        getWidth: d => 4,
-        widthMinPixels: 2,
+        getTimestamps: d => data.getTimestamps(d).map(ts => ts - animationConfig.domain[0]),
+        opacity: this.config.visConfig.opacity,
+        widthScale: this.config.visConfig.thickness * zoomFactor * 8,
+        highlightColor:  this.config.highlightColor,
+
+        getWidth: data.getWidth,
         rounded: true,
+        pickable: true,
+        autoHighlight: true,
+        parameters: {depthTest: mapState.dragRotate},
+
         trailLength: visConfig.trailLength,
         currentTime: animationConfig.currentTime - animationConfig.domain[0],
-        lightSettings,
         updateTriggers
       })
     ];

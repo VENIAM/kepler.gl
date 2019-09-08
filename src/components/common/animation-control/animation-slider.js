@@ -21,6 +21,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
+import {requestAnimationFrame, cancelAnimationFrame} from 'global/window';
 
 import Slider from 'components/common/slider/slider';
 import {
@@ -30,29 +31,31 @@ import {
 } from 'components/common/styled-components';
 import {Play, Reset, Pause} from 'components/common/icons';
 import SpeedControl from './speed-control';
-import {requestAnimationFrame, cancelAnimationFrame} from 'global/window';
+import {BASE_SPEED} from 'constants/default-settings';
 
 const SliderWrapper = styled.div`
   display: flex;
   position: relative;
   flex-grow: 1;
-  margin-top: 6px;
-  margin-right: 5px;
+  margin-right: 24px;
+  margin-left: 24px;
 `;
 
 const StyledControl = styled.div`
   background-color: ${props => props.theme.panelBackground};
-  // height: 60px;
 `;
 
 const AnimationWidgetInner = styled.div`
-  padding: 10px 12px 2px 12px;
+  padding: 2px 12px;
   position: relative;
   display: flex;
+  align-items: center;
+  height: 48px;
 `;
 
 const StyledAnimationControls = styled.div`
   display: flex;
+  margin-right: 12px;
 `;
 
 const IconButton = styled(Button)`
@@ -63,35 +66,42 @@ const IconButton = styled(Button)`
 `;
 
 const StyledDomain = styled.div`
-  color: ${props => props.theme.textColor};
-  margin: 0px 20px 8px 160px
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  font-size: 9px;
+  color: ${props => props.theme.titleTextColor};
   font-weight: 400;
+  font-size: 10px;
 `;
 
 const TimeDisplay = styled.div`
-  height: 36px;
-  width: 125px;
-  background-color: ${props => props.theme.secondaryInputBgd};
-  color: white;
-  margin-left: 14px;
+  height: 64px;
+  border-radius: 32px;
+  width: 176px;
+  bottom: 100%;
+  left: calc(50% - 88px);
+  background-color: ${props => props.theme.panelBackground};
+  color: ${props => props.theme.titleTextColor};
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 1px;
-  span {
-    color: white;
-    font-size: 11px;
-    font-weight: 400;
+  position: absolute;
+  opacity: 0.8;
+
+  .animation-control__time-display__top {
+    font-size: 12px;
+    font-weight: 500;
+    color: ${props => props.theme.textColor};
+  }
+
+  .animation-control__time-display__bottom {
+    color: ${props => props.theme.titleTextColor};
+    font-size: 14px;
+    font-weight: 500;
   }
 `;
 
 const defaultTimeFormat = 'MM/DD/YY hh:mm:ss';
 
-const buttonHeight = '16px';
+const buttonHeight = '18px';
 const AnimationControls = ({
   isAnimating,
   pauseAnimation = () => {},
@@ -153,7 +163,6 @@ const AnimationControlFactory = () => {
     _nextFrame = () => {
       this._animation = null;
       const {currentTime, domain, speed} = this.props.animation;
-      const BASE_SPEED = 600;
       const adjustedSpeed = ((domain[1] - domain[0]) / BASE_SPEED) * speed;
       const nextTime =
         currentTime + speed > domain[1] ? domain[0] : currentTime + adjustedSpeed;
@@ -180,6 +189,8 @@ const AnimationControlFactory = () => {
       const {animation, width} = this.props;
       const {currentTime, domain, speed} = animation;
       const {showSpeedControl} = this.state;
+      const displayDateTime = moment.unix(currentTime).format(defaultTimeFormat);
+      const [displayDate, displayTime] = displayDateTime.split(' ');
 
       return (
         <WidgetContainer width={width}>
@@ -192,15 +203,10 @@ const AnimationControlFactory = () => {
                 pauseAnimation={this._pauseAnimation}
                 resetAnimation={this._resetAnimation}
               />
-
-            <SpeedControl
-              onClick={this.toggleSpeedControl}
-              showSpeedControl={showSpeedControl}
-              updateAnimationSpeed={speedMultiplier=>this.props.updateAnimationSpeed(speedMultiplier)}
-              speed={speed}
-            />
-
-              <SliderWrapper className="kg-animation-control__slider">
+              <StyledDomain className="animation-control__time-domain">
+                <span>{moment.unix(domain[0]).format(defaultTimeFormat)}</span>
+              </StyledDomain>
+              <SliderWrapper className="animation-control__slider">
                 <Slider
                   showValues={false}
                   isRanged={false}
@@ -211,22 +217,20 @@ const AnimationControlFactory = () => {
                   enableBarDrag={true}
                 />
               </SliderWrapper>
+              <StyledDomain className="animation-control__time-domain">
+                <span>{moment.unix(domain[1]).format(defaultTimeFormat)}</span>
+              </StyledDomain>
+              <SpeedControl
+                onClick={this.toggleSpeedControl}
+                showSpeedControl={showSpeedControl}
+                updateAnimationSpeed={this.props.updateAnimationSpeed}
+                speed={speed}
+              />
             </AnimationWidgetInner>
-
-            <StyledDomain>
-              <span>{moment.unix(domain[0]).format(defaultTimeFormat)}</span>
-              <span>{moment.unix(domain[1]).format(defaultTimeFormat)}</span>
-            </StyledDomain>
           </StyledControl>
-
-          <TimeDisplay
-            style={{
-              position: 'absolute',
-              bottom: '110px',
-              right: '20px'
-            }}
-          >
-            <span>{moment.unix(currentTime).format(defaultTimeFormat)}</span>
+          <TimeDisplay className="animation-control__time-display">
+            <div className="animation-control__time-display__top">{displayDate}</div>
+            <div className="animation-control__time-display__bottom">{displayTime}</div>
           </TimeDisplay>
         </WidgetContainer>
       );

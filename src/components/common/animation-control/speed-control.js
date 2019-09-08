@@ -38,19 +38,18 @@ const StyledSpeedToggle = styled.div`
   .bottom-widget__icon.speed {
     margin-right: auto;
   }
-
 `;
 
 const StyledSpeedText = styled.div`
   display: inline-block,
-  width: 27px
+  width: 27px;
 `;
 
 const SpeedControl = ({onClick, updateAnimationSpeed, speed, showSpeedControl}) => (
-  <StyledSpeedToggle>
+  <StyledSpeedToggle className="animation-control__speed-control">
     <Button link width="80px" onClick={onClick}>
       <CenterFlexbox className="bottom-widget__icon speed">
-        <Rocket height="15px" />
+        <Rocket height="18px" />
       </CenterFlexbox>
       <StyledSpeedText
         style={{visibility: !showSpeedControl ? 'visible' : 'hidden'}}
@@ -60,7 +59,6 @@ const SpeedControl = ({onClick, updateAnimationSpeed, speed, showSpeedControl}) 
     </Button>
     {showSpeedControl ? (
       <AnimationSpeedToggle
-        className="bottom-widget__toggle"
         onHide={onClick}
         updateAnimationSpeed={updateAnimationSpeed}
         speed={speed}

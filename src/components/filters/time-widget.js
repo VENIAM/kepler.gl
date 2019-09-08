@@ -185,7 +185,6 @@ export class TimeWidget extends Component {
               speed={filter.speed}
             />
             </StyledTitle>
-<<<<<<< HEAD
             {!readOnly ? (
               <CenterFlexbox>
                 <IconRoundSmall>
@@ -193,16 +192,6 @@ export class TimeWidget extends Component {
                 </IconRoundSmall>
               </CenterFlexbox>
             ) : null}
-=======
-            <CenterFlexbox>
-              <IconRoundSmall>
-                <Close
-                  height="12px"
-                  onClick={() => enlargeFilter(enlargedIdx)}
-                />
-              </IconRoundSmall>
-            </CenterFlexbox>
->>>>>>> dbd8e126... [Feat] Add trip layer - 1 (#632) (#632)
           </TopSectionWrapper>
 
           <TimeRangeFilter

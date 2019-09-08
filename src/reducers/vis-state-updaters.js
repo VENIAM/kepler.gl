@@ -176,8 +176,7 @@ export const INITIAL_VIS_STATE = {
   animationConfig: {
     domain: [null, null],
     currentTime: 0,
-    duration: 10,
-    speed: 0.03
+    speed: 1
   }
 };
 

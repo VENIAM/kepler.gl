@@ -28,11 +28,11 @@ import styled from 'styled-components';
 import {createSelector} from 'reselect';
 import {Play, Reset, Pause, Minus} from 'components/common/icons';
 import {SelectTextBold, SelectText, Button, ButtonGroup} from 'components/common/styled-components';
-import {getTimeWidgetTitleFormatter, BASE_SPEED} from 'utils/filter-utils';
+import {getTimeWidgetTitleFormatter} from 'utils/filter-utils';
 import RangeSlider from './range-slider';
 import TimeSliderMarker from './time-slider-marker';
 
-const defaultTimeFormat = val => moment.utc(val).format('MM/DD/YY hh:mma');
+import {BASE_SPEED, DEFAULT_TIME_FORMAT} from 'constants/default-settings';
 const animationControlWidth = 140;
 
 const StyledSliderContainer = styled.div`
@@ -184,7 +184,7 @@ const TimeValueWrapper = styled.div`
   }
 `;
 
-const TimeTitle = ({value, isEnlarged, timeFormat = defaultTimeFormat}) => (
+const TimeTitle = ({value, isEnlarged, timeFormat = DEFAULT_TIME_FORMAT}) => (
   <TimeValueWrapper isEnlarged={isEnlarged}>
     <TimeValue key={0} value={moment.utc(value[0]).format(timeFormat)} split={!isEnlarged}/>
     {isEnlarged ? (
