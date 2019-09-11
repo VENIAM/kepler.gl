@@ -287,6 +287,42 @@ const divergingColors = [
 ];
 
 const customPalette = [
+	{
+		name: 'Veniam',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#D9E9F4',
+			'#B3D4E9',
+			'#76B2D8',
+			'#4194C9',
+			'#3079A7',
+			'#215476'
+		]
+	},
+	{
+		name: 'Veniam 5',
+		type: DIV,
+		category: 'Uber',
+		colors: [
+			'#D9E9F4',
+			'#B3D4E9',
+			'#76B2D8',
+			'#4194C9',
+			'#3079A7'
+		]
+	},
+	{
+		name: 'Veniam 4',
+		type: DIV,
+		category: 'Uber',
+		colors: [
+			'#D9E9F4',
+			'#B3D4E9',
+			'#76B2D8',
+			'#4194C9'
+		]
+	},
   {
     name: 'UberPool',
     type: DIV,

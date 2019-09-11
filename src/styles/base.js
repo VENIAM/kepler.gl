@@ -47,16 +47,16 @@ export const subtextColorActive = '#FFFFFF';
 export const titleTextColor = '#FFFFFF';
 export const textColorHl = '#D3D8E0';
 export const textColorHlLT = '#F1F1F1';
-export const activeColor = '#1FBAD6';
+export const activeColor = '#4194C9';
 export const activeColorHover = '#108188';
 export const errorColor = '#F9042C';
 
 // Button
-export const primaryBtnBgd = '#0F9668';
+export const primaryBtnBgd = '#4194C9';
 export const primaryBtnActBgd = '#13B17B';
 export const primaryBtnColor = '#FFFFFF';
 export const primaryBtnActColor = '#FFFFFF';
-export const primaryBtnBgdHover = '#13B17B';
+export const primaryBtnBgdHover = '#4194C9';
 export const primaryBtnRadius = '2px';
 
 export const secondaryBtnBgd = '#6A7485';

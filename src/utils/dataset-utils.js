@@ -26,7 +26,7 @@ import {validateInputData} from 'processors/data-processor';
 // apply a color for each dataset
 // to use as label colors
 const datasetColors = [
-  '#8F2FBF',
+  '#4194C9',
   '#005CFF',
   '#C06C84',
   '#F8B195',
