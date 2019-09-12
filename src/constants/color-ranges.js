@@ -63,23 +63,23 @@ const colorRanges = [...VizColorPalette];
 
 // Add colorbrewer color schemes (Data Science requirement)
 // See http://colorbrewer2.org/
-function entries(obj) {
-  return Object.keys(obj).map(k => [k, obj[k]]);
-}
+// function entries(obj) {
+//   return Object.keys(obj).map(k => [k, obj[k]]);
+// }
 
-for (const [keyName, colorScheme] of entries(colorbrewer)) {
-  for (const [lenKey, colors] of entries(colorScheme)) {
-    colorRanges.push({
-      name: `ColorBrewer ${keyName}-${lenKey}`,
-      type: colorBrewerMap[keyName],
-      category: 'ColorBrewer',
-      colors
-    });
-  }
-}
+// for (const [keyName, colorScheme] of entries(colorbrewer)) {
+//   for (const [lenKey, colors] of entries(colorScheme)) {
+//     colorRanges.push({
+//       name: `ColorBrewer ${keyName}-${lenKey}`,
+//       type: colorBrewerMap[keyName],
+//       category: 'ColorBrewer',
+//       colors
+//     });
+//   }
+// }
 
 export const COLOR_RANGES = colorRanges;
 
 export const DefaultColorRange = colorRanges.find(
-  ({name}) => name === 'Global Warming'
+  ({name}) => name === 'Veniam Blue'
 );

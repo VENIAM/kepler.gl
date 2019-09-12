@@ -288,7 +288,7 @@ const divergingColors = [
 
 const customPalette = [
 	{
-		name: 'Veniam',
+		name: 'Veniam Blue',
 		type: DIV,
 		category: 'Veniam',
 		colors: [
@@ -297,573 +297,124 @@ const customPalette = [
 			'#76B2D8',
 			'#4194C9',
 			'#3079A7',
-			'#215476'
+			'#215476',
+			'#1A3B50'
 		]
 	},
 	{
-		name: 'Veniam 5',
+		name: 'Dark Orange',
 		type: DIV,
-		category: 'Uber',
+		category: 'Veniam',
 		colors: [
-			'#D9E9F4',
-			'#B3D4E9',
-			'#76B2D8',
-			'#4194C9',
-			'#3079A7'
+			'#FFE8CC',
+			'#FFD199',
+			'#FFAC47',
+			'#FF8C00',
+			'#CC7000',
+			'#8F4E00',
+			'#663800'
 		]
 	},
 	{
-		name: 'Veniam 4',
+		name: 'Sheen Green',
 		type: DIV,
-		category: 'Uber',
+		category: 'Veniam',
 		colors: [
-			'#D9E9F4',
-			'#B3D4E9',
-			'#76B2D8',
-			'#4194C9'
+			'#E8F5D0',
+			'#D1EBA2',
+			'#B1EB47',
+			'#8ECF17',
+			'#6FA112',
+			'#4C6E0C',
+			'#385209'
 		]
 	},
-  {
-    name: 'UberPool',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#223F9A',
-      '#2C51BE',
-      '#482BBD',
-      '#7A0DA6',
-      '#AE0E7F',
-      '#CF1750',
-      '#E31A1A',
-      '#FD7900',
-      '#FAC200',
-      '#FAE300'
-    ]
-  },
-  {
-    name: 'UberPool 9',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#2C51BE',
-      '#482BBD',
-      '#7A0DA6',
-      '#AE0E7F',
-      '#CF1750',
-      '#E31A1A',
-      '#FD7900',
-      '#FAC200',
-      '#FAE300'
-    ]
-  },
-  {
-    name: 'UberPool 8',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#3C1FA7',
-      '#811CB5',
-      '#C318B0',
-      '#D01367',
-      '#DE0F0E',
-      '#EC7007',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'UberPool 7',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#461FA9',
-      '#9B1BBA',
-      '#CA168E',
-      '#DA102C',
-      '#E95E08',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'UberPool 6',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#551EAD',
-      '#C019BD',
-      '#D31256',
-      '#E6470A',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'UberPool 5',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#6E1DB2',
-      '#CA168E',
-      '#E2260C',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'UberPool 4',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#9B1BBA',
-      '#DA102C',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'UberPool 3',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#213E9A',
-      '#CA168E',
-      '#F9E200'
-    ]
-  },
-  {
-    name: 'Ice And Fire 3',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#0198BD',
-      '#FAFEB3',
-      '#D50255'
-    ]
-  },
-  {
-    name: 'Ice And Fire 4',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#0198BD',
-      '#E8FEB5',
-      '#FEAD54',
-      '#D50255'
-    ]
-  },
-  {
-    name: 'Ice And Fire 5',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#0198BD',
-      '#49E3CE',
-      '#FAFEB3',
-      '#FEAD54',
-      '#D50255'
-    ]
-  },
-  {
-    name: 'Ice And Fire',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#0198BD',
-      '#49E3CE',
-      '#E8FEB5',
-      '#FEEDB1',
-      '#FEAD54',
-      '#D50255'
-    ]
-  },
-  {
-    name: 'Ice And Fire 7',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#0198BD',
-      '#54BAB9',
-      '#A7DCB6',
-      '#FAFEB3',
-      '#FCD583',
-      '#FEAD54',
-      '#D50255'
-    ]
-  },
-  {
-    name: 'Ice And Fire 8',
-    type: DIV,
-    category: 'Uber',
-    colors: [
-      '#007A99',
-      '#0198BD',
-      '#49E3CE',
-      '#E8FEB5',
-      '#FEEDB1',
-      '#FEAD54',
-      '#D50255',
-      '#7F1941'
-    ]
-  },
-  {
-    name: 'Global Warming 3',
-    type: SEQ,
-    category: 'Uber',
-    colors: ['#5A1846', '#C70039', '#FFC300']
-  },
-  {
-    name: 'Global Warming 4',
-    type: SEQ,
-    category: 'Uber',
-    colors: ['#5A1846', '#831A3D', '#E3611C', '#FFC300']
-  },
-  {
-    name: 'Global Warming 5',
-    type: SEQ,
-    category: 'Uber',
-    colors: ['#5A1846', '#831A3D', '#AC1C17', '#D55D0E', '#FFC300']
-  },
-  {
-    name: 'Global Warming',
-    type: SEQ,
-    category: 'Uber',
-    colors: ['#5A1846', '#900C3F', '#C70039', '#E3611C', '#F1920E', '#FFC300']
-  },
-  {
-    name: 'Global Warming 7',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#5A1846',
-      '#751A43',
-      '#911932',
-      '#AC1C17',
-      '#C84411',
-      '#E37B0A',
-      '#FFC300'
-    ]
-  },
-  {
-    name: 'Global Warming 8',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#4C0035',
-      '#650031',
-      '#7F0023',
-      '#98000A',
-      '#B21800',
-      '#CB4600',
-      '#E57F00',
-      '#FFC300'
-    ]
-  },
-  {
-    name: 'Sunrise 3',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#355C7D',
-      '#C06C84',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Sunrise 4',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#355C7D',
-      '#9A627C',
-      '#C86A7E',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Sunrise',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#355C7D',
-      '#6C5B7B',
-      '#C06C84',
-      '#F67280',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Sunrise 6',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#355C7D',
-      '#63617F',
-      '#916681',
-      '#D88185',
-      '#E8998D',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Sunrise 7',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#355C7D',
-      '#63617F',
-      '#916681',
-      '#C06C84',
-      '#D28389',
-      '#E59A8F',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Sunrise 8',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#194266',
-      '#355C7D',
-      '#63617F',
-      '#916681',
-      '#C06C84',
-      '#D28389',
-      '#E59A8F',
-      '#F8B195'
-    ]
-  },
-  {
-    name: 'Ocean Green 3',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#3A748A',
-      '#3EACA8',
-      '#E5EEc1'
-    ]
-  },
-  {
-    name: 'Ocean Green 4',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#547A82',
-      '#3EACA8',
-      '#A2D4AB',
-      '#E5EEc1'
-    ]
-  },
-  {
-    name: 'Ocean Green 5',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#3A748A',
-      '#54A38F',
-      '#73BC84',
-      '#A9D597',
-      '#E5EEc1'
-    ]
-  },
-  {
-    name: 'Ocean Green 6',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#37535E',
-      '#3A748A',
-      '#4095B5',
-      '#52AEC9',
-      '#72BFC4',
-      '#93CFBF'
-    ]
-  },
-  {
-    name: 'Ocean Green 7',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#3A748A',
-      '#4B9A95',
-      '#5EAB8B',
-      '#73BC84',
-      '#92CC8B',
-      '#BEDDA5',
-      '#E5EEc1'
-    ]
-  },
-  {
-    name: 'Ocean Green 8',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#37535E',
-      '#3A748A',
-      '#4B9A95',
-      '#5EAB8B',
-      '#73BC84',
-      '#92CC8B',
-      '#BEDDA5',
-      '#E5EEc1'
-    ]
-  },
-  {
-    name: 'Pink Wine 3',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#50315E',
-      '#956485',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Pink Wine 4',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#50315E',
-      '#774976',
-      '#B28294',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Pink Wine 5',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#50315E',
-      '#643D68',
-      '#956485',
-      '#C1939D',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Pink Wine 6',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2C1E3D',
-      '#573660',
-      '#83537C',
-      '#A6758E',
-      '#C99DA4',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Pink Wine 7',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2C1E3D',
-      '#4F315A',
-      '#774976',
-      '#956485',
-      '#B28294',
-      '#CFA4A8',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Pink Wine',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2C1E3D',
-      '#50315E',
-      '#764476',
-      '#9A5B88',
-      '#B77495',
-      '#CF91A3',
-      '#E0B1B3',
-      '#EDD1CA'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow 3',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#5EA28D',
-      '#D6DEBF'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow 4',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#466373',
-      '#7BA889',
-      '#D6DEBF'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow 5',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#3A4B66',
-      '#5F8E86',
-      '#8BB68D',
-      '#D6DEBF'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow 6',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#343D5E',
-      '#4F777E',
-      '#709E87',
-      '#99BE95',
-      '#D6DEBF'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow 7',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#303558',
-      '#466373',
-      '#5F8E86',
-      '#7BA889',
-      '#A4C39B',
-      '#D6DEBF'
-    ]
-  },
-  {
-    name: 'Purple Blue Yellow',
-    type: SEQ,
-    category: 'Uber',
-    colors: [
-      '#2B1E3E',
-      '#383C65',
-      '#3E5F7E',
-      '#49838A',
-      '#5EA28D',
-      '#82BB92',
-      '#AECEA1',
-      '#D6DEBF'
-    ]
-  }
+	{
+		name: 'Mikado Yellow',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#FFF4CE',
+			'#FFE99D',
+			'#FFD74F',
+			'#FFC80A',
+			'#D6A600',
+			'#977400',
+			'#665004'
+		]
+	},
+	{
+		name: 'Iris',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#D9DCF4',
+			'#B3B9E9',
+			'#7681D8',
+			'#4150C9',
+			'#303DA7',
+			'#212B76',
+			'#1A2050'
+		]
+	},
+	{
+		name: 'Orange Pantone',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#FFDDCE',
+			'#FFBB9D',
+			'#FF864F',
+			'#FF570A',
+			'#D64300',
+			'#972F00',
+			'#662204'
+		]
+	},
+	{
+		name: 'Keppel',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#D6EFEC',
+			'#AEE0DA',
+			'#62D0C3',
+			'#35B2A3',
+			'#298B7F',
+			'#1C5F57',
+			'#154741'
+		]
+	},
+	{
+		name: 'Hollywood Cerise',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#FACDEA',
+			'#F69BD6',
+			'#FB3EB8',
+			'#EA0599',
+			'#B80478',
+			'#7F0253',
+			'#5D023D'
+		]
+	},
+	{
+		name: 'Violet',
+		type: DIV,
+		category: 'Veniam',
+		colors: [
+			'#E8CCFF',
+			'#D199FF',
+			'#AC47FF',
+			'#8C00FF',
+			'#7000CC',
+			'#4E008F',
+			'#380066'
+		]
+	}
 ];
 
 export const VizColorPalette = [
-  ...divergingColors,
-  ...sequantialColors,
-  ...qualitativeColors,
   ...customPalette
 ];

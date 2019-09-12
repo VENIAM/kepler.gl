@@ -62,7 +62,7 @@ export default class ColorRangeSelect extends Component {
       },
       steps: {
         type: 'select',
-        value: 6,
+        value: 7,
         options: ALL_STEPS
       },
       reversed: {
