@@ -56,7 +56,7 @@ export const primaryBtnBgd = '#4194C9';
 export const primaryBtnActBgd = '#13B17B';
 export const primaryBtnColor = '#FFFFFF';
 export const primaryBtnActColor = '#FFFFFF';
-export const primaryBtnBgdHover = '#4194C9';
+export const primaryBtnBgdHover = '#1A3B50';
 export const primaryBtnRadius = '2px';
 
 export const secondaryBtnBgd = '#6A7485';
