@@ -29,26 +29,7 @@ export const QUA = 'qualitative';
 export const DIV = 'diverging';
 
 export const DataVizColors = {
-  aqua: '#12939A',
-  tumbleweed: '#DDB27C',
-  mule_fawn: '#88572C',
-  tree_poppy: '#FF991F',
-  flame: '#F15C17',
-  sapphire: '#223F9A',
-  orchid: '#DA70BF',
-  chathams_blue: '#125C77',
-  med_aquamarine: '#4DC19C',
-  crocodile: '#776E57',
-  java: '#17B8BE',
-  chalky: '#F6D18A',
-  light_taupe: '#B7885E',
-  peach_orange: '#FFCB99',
-  apricot: '#F89570',
-  portage: '#829AE3',
-  light_orchid: '#E79FD5',
-  blue_green: '#1E96BE',
-  bermuda: '#89DAC1',
-  cloudy: '#B3AD9E'
+  veniam: '#4194C9'
 };
 
 const quaColors = Object.values(DataVizColors);
