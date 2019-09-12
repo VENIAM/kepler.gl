@@ -33,7 +33,7 @@ const propTypes = {
 };
 
 const PALETTE_HEIGHT = '8px';
-const ROWS = 6;
+const ROWS = 7;
 
 const StyledColorPalette = styled.div`
   display: flex;
