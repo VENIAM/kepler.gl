@@ -48,8 +48,6 @@ function makeLocalDevConfig(env, EXAMPLE_DIR = LIB_DIR) {
       }
     },
 
-    devtool: 'source-map',
-
     resolve: {
       alias: {
         // Imports kepler.gl library from the src directory in this repo

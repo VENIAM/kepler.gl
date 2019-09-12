@@ -37,8 +37,6 @@ const CONFIG = {
     publicPath: "/"
   },
 
-  devtool: 'source-map',
-
   resolve: {
     // Make src files outside of this dir resolve modules in our node_modules folder
     modules: [resolve(__dirname, '.'), resolve(__dirname, 'node_modules'), 'node_modules']
@@ -68,6 +66,9 @@ const CONFIG = {
   // to support browser history api and remove the '#' sign
   devServer: {
     historyApiFallback: true
+  },
+  optimization: {
+	minimize: false
   },
 
   // Optional: Enables reading mapbox and dropbox client token from environment variable
