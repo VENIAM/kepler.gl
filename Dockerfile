@@ -1,6 +1,6 @@
 FROM okdocker/pynode:latest
-WORKDIR /app/kepler.gl/
+ADD . /app
+WORKDIR /app/
 RUN npm install
 EXPOSE 80
-RUN echo "$MapboxAccessToken"
 CMD ["npm", "start"]
