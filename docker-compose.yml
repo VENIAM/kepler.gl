@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  kepler.gl:
+    image: vn-kepler:1.0
+    container_name: vn-kepler
+    ports:
+      - 80:80
+    environment:
+      - MapboxAccessToken
+    volumes:
+      - ./:/app
+    build:
+      context: .
+      dockerfile: Dockerfile
