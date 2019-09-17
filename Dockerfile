@@ -1,5 +1,5 @@
 FROM okdocker/pynode:latest
-ADD . /app
+ADD package.json /app
 WORKDIR /app/
 RUN npm install
 EXPOSE 80

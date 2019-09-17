@@ -9,6 +9,7 @@ services:
       - MapboxAccessToken
     volumes:
       - ./:/app
+      - /app/node_modules
     build:
       context: .
       dockerfile: Dockerfile
